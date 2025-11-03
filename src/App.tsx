@@ -426,13 +426,13 @@ export default function App() {
       <Header />
       <main>
         <Hero />
+        <Products />
         <IntegrationsShowcase />
+        <Services />
+        <Benefits />
         <Vision />
         <UseCases />
-        <Products />
         <StatsSection />
-        <Benefits />
-        <Services />
         <FAQ items={homeFAQItems} />
         <Contact />
       </main>

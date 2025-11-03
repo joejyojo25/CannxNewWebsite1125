@@ -24,55 +24,178 @@ export function Vision() {
           </p>
         </motion.div>
 
-        {/* Hero Visual Card */}
+        {/* Hero Visual Card - Creative Design */}
         <motion.div
-          className="relative max-w-6xl mx-auto mb-20 rounded-3xl overflow-hidden shadow-2xl"
+          className="relative max-w-6xl mx-auto mb-20"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <div className="relative h-[400px] sm:h-[500px]">
-            <img
-              src="https://images.unsplash.com/photo-1681216868987-b7268753b81c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBidWlsZGluZyUyMGFyY2hpdGVjdHVyZXxlbnwxfHx8fDE3NjE5ODU3NDF8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-              alt="Modern Building Architecture"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-gray-900/90 via-gray-900/50 to-transparent" />
+          <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+            {/* Animated Gradient Background */}
+            <div className="absolute inset-0 bg-gradient-to-br from-[#0CB14B] via-gray-900 to-[#cd2653] opacity-90" />
             
-            {/* Overlay Content */}
-            <div className="absolute inset-0 flex items-end">
-              <div className="p-8 sm:p-12 w-full">
+            {/* Animated Grid Pattern */}
+            <div className="absolute inset-0" style={{
+              backgroundImage: `linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+                               linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)`,
+              backgroundSize: '50px 50px',
+              animation: 'gridMove 20s linear infinite'
+            }} />
+            
+            {/* Floating Orbs */}
+            <motion.div
+              className="absolute top-20 left-20 w-32 h-32 bg-[#0CB14B] rounded-full blur-3xl opacity-30"
+              animate={{
+                y: [0, 30, 0],
+                x: [0, 20, 0],
+              }}
+              transition={{
+                duration: 8,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+            />
+            <motion.div
+              className="absolute bottom-20 right-20 w-40 h-40 bg-[#cd2653] rounded-full blur-3xl opacity-30"
+              animate={{
+                y: [0, -30, 0],
+                x: [0, -20, 0],
+              }}
+              transition={{
+                duration: 10,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+            />
+            
+            {/* Glassmorphism Content Container */}
+            <div className="relative backdrop-blur-sm bg-white/5 border border-white/10">
+              <div className="p-8 sm:p-12 py-16 sm:py-20">
                 <motion.div
-                  className="max-w-3xl"
+                  className="max-w-4xl mx-auto text-center"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.3 }}
                 >
-                  <div className="flex items-center gap-3 mb-4">
-                    <span className="px-4 py-1.5 bg-[#0CB14B]/90 text-white rounded-full text-sm backdrop-blur-sm">
+                  {/* Animated Formula */}
+                  <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mb-8">
+                    <motion.span
+                      className="px-6 py-3 bg-[#0CB14B] text-white rounded-full shadow-lg shadow-[#0CB14B]/50"
+                      whileHover={{ scale: 1.05 }}
+                      animate={{
+                        boxShadow: [
+                          "0 0 20px rgba(12, 177, 75, 0.5)",
+                          "0 0 40px rgba(12, 177, 75, 0.8)",
+                          "0 0 20px rgba(12, 177, 75, 0.5)",
+                        ]
+                      }}
+                      transition={{ duration: 2, repeat: Infinity }}
+                    >
                       KNX
-                    </span>
-                    <span className="text-white text-xl">+</span>
-                    <span className="px-4 py-1.5 bg-[#cd2653]/90 text-white rounded-full text-sm backdrop-blur-sm">
+                    </motion.span>
+                    
+                    <motion.span
+                      className="text-white text-3xl"
+                      animate={{ rotate: [0, 360] }}
+                      transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                    >
+                      +
+                    </motion.span>
+                    
+                    <motion.span
+                      className="px-6 py-3 bg-[#cd2653] text-white rounded-full shadow-lg shadow-[#cd2653]/50"
+                      whileHover={{ scale: 1.05 }}
+                      animate={{
+                        boxShadow: [
+                          "0 0 20px rgba(205, 38, 83, 0.5)",
+                          "0 0 40px rgba(205, 38, 83, 0.8)",
+                          "0 0 20px rgba(205, 38, 83, 0.5)",
+                        ]
+                      }}
+                      transition={{ duration: 2, repeat: Infinity, delay: 1 }}
+                    >
                       IoT
-                    </span>
-                    <span className="text-white text-xl">=</span>
-                    <span className="px-4 py-1.5 bg-gradient-to-r from-[#0CB14B] to-[#cd2653] text-white rounded-full text-sm backdrop-blur-sm">
+                    </motion.span>
+                    
+                    <motion.span
+                      className="text-white text-3xl"
+                      animate={{ scale: [1, 1.2, 1] }}
+                      transition={{ duration: 2, repeat: Infinity }}
+                    >
+                      =
+                    </motion.span>
+                    
+                    <motion.span
+                      className="px-8 py-3 bg-gradient-to-r from-[#0CB14B] to-[#cd2653] text-white rounded-full shadow-2xl"
+                      whileHover={{ scale: 1.05 }}
+                      animate={{
+                        backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
+                      }}
+                      transition={{ duration: 5, repeat: Infinity }}
+                      style={{ backgroundSize: "200% 200%" }}
+                    >
                       KNX Augmenté
-                    </span>
+                    </motion.span>
                   </div>
-                  <p className="text-white text-xl sm:text-2xl mb-4">
-                    Concevoir, performer et optimiser les systèmes connectés
-                  </p>
-                  <p className="text-gray-200 text-lg">
+                  
+                  {/* Main Heading */}
+                  <motion.h3
+                    className="text-white text-2xl sm:text-4xl mb-6 leading-relaxed"
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.5 }}
+                  >
+                    Concevoir, performer et optimiser<br />
+                    <span className="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+                      les systèmes connectés
+                    </span>
+                  </motion.h3>
+                  
+                  {/* Subtitle */}
+                  <motion.p
+                    className="text-gray-200 text-lg sm:text-xl max-w-3xl mx-auto"
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.7 }}
+                  >
                     Du smart home à la GTB : révolutionner l'intégration dans le bâtiment
-                  </p>
+                  </motion.p>
+                  
+                  {/* Decorative Tech Lines */}
+                  <div className="mt-8 flex justify-center gap-2">
+                    {[...Array(5)].map((_, i) => (
+                      <motion.div
+                        key={i}
+                        className="w-1 h-12 bg-gradient-to-b from-transparent via-white/50 to-transparent rounded-full"
+                        animate={{
+                          scaleY: [1, 1.5, 1],
+                          opacity: [0.3, 0.8, 0.3]
+                        }}
+                        transition={{
+                          duration: 2,
+                          repeat: Infinity,
+                          delay: i * 0.2
+                        }}
+                      />
+                    ))}
+                  </div>
                 </motion.div>
               </div>
             </div>
           </div>
+          
+          {/* Add keyframes for grid animation */}
+          <style>{`
+            @keyframes gridMove {
+              0% { transform: translateY(0); }
+              100% { transform: translateY(50px); }
+            }
+          `}</style>
         </motion.div>
 
         {/* Visual Features Grid */}

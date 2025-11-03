@@ -1,15 +1,27 @@
 import { motion } from 'motion/react';
-import { Logo } from './Logo';
+import { Zap, Wifi, Radio, Lock, Camera, Wind, Plug, Car, Video, Network, Droplets, Waves, Home, Speaker, Bell, Server, MessageSquare } from 'lucide-react';
+import { ImageWithFallback } from './figma/ImageWithFallback';
+import logo from 'figma:asset/348a1b6c3d5d7ac002eb03f6562c9a4b5d60b371.png';
 
 const integrations = [
-  { name: '2N', position: 'top-[10%] left-[15%]', delay: 0.1 },
-  { name: 'DoorBird', position: 'top-[5%] right-[20%]', delay: 0.2 },
-  { name: 'Sonos', position: 'top-[30%] right-[5%]', delay: 0.3 },
-  { name: 'Modbus', position: 'top-[55%] right-[8%]', delay: 0.4 },
-  { name: 'PoolCop', position: 'bottom-[15%] right-[18%]', delay: 0.5 },
-  { name: 'Shelly', position: 'bottom-[8%] left-[20%]', delay: 0.6 },
-  { name: 'Nuki', position: 'top-[55%] left-[5%]', delay: 0.7 },
-  { name: 'KNX', position: 'top-[28%] left-[8%]', delay: 0.8 },
+  { name: 'KNX', icon: Network, color: 'from-[#0CB14B] to-[#0a9d3f]', description: 'Standard bus domotique', link: '#integration-knx' },
+  { name: 'Shelly', icon: Zap, color: 'from-blue-500 to-blue-600', description: 'Modules IoT WiFi', link: '#integration-shelly' },
+  { name: 'Sonos', icon: Speaker, color: 'from-gray-800 to-gray-900', description: 'Audio multi-room', link: '#integration-sonos' },
+  { name: 'Nuki', icon: Lock, color: 'from-orange-500 to-orange-600', description: 'Serrures connectées', link: '#integration-nuki' },
+  { name: 'DoorBird', icon: Camera, color: 'from-red-500 to-red-600', description: 'Interphones IP', link: '#integration-doorbird' },
+  { name: 'Airzone', icon: Wind, color: 'from-cyan-500 to-cyan-600', description: 'Climatisation zonée', link: '#integration-airzone' },
+  { name: 'Lektrico', icon: Plug, color: 'from-green-600 to-green-700', description: 'Bornes de charge', link: '#integration-lektrico' },
+  { name: 'TerraAC', icon: Car, color: 'from-teal-500 to-teal-600', description: 'Charge véhicules', link: '#integration-terraac' },
+  { name: 'EvlinkPro', icon: Zap, color: 'from-indigo-500 to-indigo-600', description: 'Stations de charge', link: '#integration-evlinkpro' },
+  { name: 'Hikvision', icon: Video, color: 'from-red-600 to-red-700', description: 'Vidéosurveillance', link: '#integration-hikvision' },
+  { name: '2N', icon: Camera, color: 'from-blue-600 to-blue-700', description: 'Interphonie IP', link: '#integration-2n' },
+  { name: 'PoolCop', icon: Droplets, color: 'from-blue-400 to-blue-500', description: 'Gestion piscine', link: '#integration-poolcop' },
+  { name: 'Klereo', icon: Waves, color: 'from-purple-500 to-purple-600', description: 'Domotique KNX', link: '#integration-klereo' },
+  { name: 'Crestron', icon: Home, color: 'from-gray-700 to-gray-800', description: 'Automatisation pro', link: '#integration-crestron' },
+  { name: 'HomeKit', icon: Home, color: 'from-gray-600 to-gray-700', description: 'Écosystème Apple', link: '#integration-homekit' },
+  { name: 'Modbus', icon: Server, color: 'from-yellow-600 to-yellow-700', description: 'Protocole industriel', link: '#integration-modbus' },
+  { name: 'Pushover', icon: Bell, color: 'from-blue-500 to-blue-600', description: 'Notifications push', link: '#integration-pushover' },
+  { name: 'Gude', icon: MessageSquare, color: 'from-green-500 to-green-600', description: 'Monitoring énergie', link: '#integration-gude' },
 ];
 
 export function IntegrationsShowcase() {
@@ -22,157 +34,121 @@ export function IntegrationsShowcase() {
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Visual - Integrations Circle */}
-          <motion.div
-            className="relative w-full max-w-2xl mx-auto"
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            {/* Concentric circles background */}
-            <div className="relative aspect-square">
-              {/* Outer circles */}
-              <motion.div
-                className="absolute inset-0 rounded-full border-2 border-gray-200 opacity-20"
-                initial={{ scale: 0.8, opacity: 0 }}
-                whileInView={{ scale: 1, opacity: 0.2 }}
-                viewport={{ once: true }}
-                transition={{ duration: 1, delay: 0.2 }}
-              />
-              <motion.div
-                className="absolute inset-[10%] rounded-full border-2 border-gray-200 opacity-30"
-                initial={{ scale: 0.8, opacity: 0 }}
-                whileInView={{ scale: 1, opacity: 0.3 }}
-                viewport={{ once: true }}
-                transition={{ duration: 1, delay: 0.3 }}
-              />
-              <motion.div
-                className="absolute inset-[20%] rounded-full border-2 border-gray-200 opacity-40"
-                initial={{ scale: 0.8, opacity: 0 }}
-                whileInView={{ scale: 1, opacity: 0.4 }}
-                viewport={{ once: true }}
-                transition={{ duration: 1, delay: 0.4 }}
-              />
+        {/* Header Section */}
+        <motion.div
+          className="text-center max-w-4xl mx-auto mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <div className="inline-flex items-center justify-center mb-6">
+            <div className="bg-white rounded-2xl p-4 shadow-lg">
+              <ImageWithFallback src={logo} alt="Can-nX" className="w-24 h-24 object-contain" />
+            </div>
+          </div>
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl mb-6">
+            5+ années à connecter différents systèmes & équipements
+          </h2>
+          <p className="text-xl text-gray-600 mb-8">
+            Connectez n'importe quel système ou équipement. Can'nX intègre de manière 
+            transparente KNX, Modbus, IoT et 18 marques leaders pour créer un 
+            écosystème de bâtiment intelligent unifié.
+          </p>
 
-              {/* Center logo */}
+          {/* Quick stats */}
+          <div className="grid grid-cols-3 gap-6 max-w-2xl mx-auto">
+            {[
+              { number: '18', label: 'Intégrations' },
+              { number: '6', label: 'Produits' },
+              { number: '100%', label: 'KNX Certifié' },
+            ].map((stat, index) => (
               <motion.div
-                className="absolute inset-[30%] flex items-center justify-center bg-gradient-to-br from-white to-gray-50 rounded-full shadow-2xl border-4 border-white"
-                initial={{ scale: 0, rotate: -180 }}
-                whileInView={{ scale: 1, rotate: 0 }}
+                key={stat.label}
+                className="text-center"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: 0.5 }}
+                transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
               >
-                <div className="w-full h-full flex items-center justify-center p-8">
-                  <Logo className="w-full h-full" />
+                <div className="text-3xl sm:text-4xl bg-gradient-to-r from-[#0CB14B] to-[#cd2653] bg-clip-text text-transparent mb-1">
+                  {stat.number}
                 </div>
+                <div className="text-sm text-gray-600">{stat.label}</div>
               </motion.div>
+            ))}
+          </div>
+        </motion.div>
 
-              {/* Integration badges */}
-              {integrations.map((integration, index) => (
-                <motion.div
-                  key={integration.name}
-                  className={`absolute ${integration.position} transform -translate-x-1/2 -translate-y-1/2`}
-                  initial={{ opacity: 0, scale: 0 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: integration.delay }}
-                  whileHover={{ scale: 1.1 }}
-                >
-                  <div className="bg-white rounded-full px-4 py-2 shadow-lg border-2 border-gray-100 hover:border-[#0CB14B] transition-colors">
-                    <span className="text-sm font-semibold text-gray-800 whitespace-nowrap">
-                      {integration.name}
-                    </span>
-                  </div>
-                </motion.div>
-              ))}
-
-              {/* Connecting lines animation */}
-              <svg className="absolute inset-0 w-full h-full pointer-events-none">
-                <defs>
-                  <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#0CB14B" stopOpacity="0.3" />
-                    <stop offset="100%" stopColor="#cd2653" stopOpacity="0.3" />
-                  </linearGradient>
-                </defs>
-                {integrations.map((_, index) => (
-                  <motion.circle
-                    key={index}
-                    cx="50%"
-                    cy="50%"
-                    r={`${35 + index * 5}%`}
-                    fill="none"
-                    stroke="url(#lineGradient)"
-                    strokeWidth="1"
-                    strokeDasharray="5,5"
-                    initial={{ pathLength: 0, opacity: 0 }}
-                    whileInView={{ pathLength: 1, opacity: 0.3 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 2, delay: 0.5 + index * 0.1 }}
-                  />
-                ))}
-              </svg>
-            </div>
-          </motion.div>
-
-          {/* Content */}
-          <motion.div
-            className="text-center lg:text-left"
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl mb-6">
-              5+ années à connecter différents systèmes & équipements
-            </h2>
-            <p className="text-xl text-gray-600 mb-8">
-              Connectez n'importe quel système ou équipement. Can'nX intègre de manière 
-              transparente KNX, Modbus, IoT et plus de 13 marques leaders pour créer un 
-              écosystème de bâtiment intelligent unifié.
-            </p>
-            <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
-              <a
-                href="#integrations"
-                className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-[#0CB14B] to-[#0CB14B]/90 text-white rounded-lg hover:shadow-lg transition-shadow"
+        {/* Bento Box Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4 max-w-7xl mx-auto mb-12">
+          {integrations.map((integration, index) => {
+            const Icon = integration.icon;
+            return (
+              <motion.a
+                key={integration.name}
+                href={integration.link}
+                className="group relative bg-white rounded-2xl p-6 shadow-md hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-[#0CB14B] overflow-hidden"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: index * 0.05 }}
+                whileHover={{ y: -8, scale: 1.02 }}
               >
-                Découvrir les intégrations
-              </a>
-              <a
-                href="https://can-nx.shop"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center px-6 py-3 border-2 border-gray-300 text-gray-700 rounded-lg hover:border-[#0CB14B] hover:text-[#0CB14B] transition-colors"
-              >
-                Boutique en ligne
-              </a>
-            </div>
+                {/* Gradient Background on Hover */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${integration.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300`} />
+                
+                {/* Icon */}
+                <div className={`relative mb-4 w-12 h-12 rounded-xl bg-gradient-to-br ${integration.color} p-2.5 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                  <Icon className="w-full h-full text-white" />
+                </div>
 
-            {/* Quick stats */}
-            <div className="grid grid-cols-3 gap-6 mt-12 pt-12 border-t border-gray-200">
-              {[
-                { number: '13+', label: 'Intégrations' },
-                { number: '6', label: 'Produits' },
-                { number: '100%', label: 'KNX Certifié' },
-              ].map((stat, index) => (
-                <motion.div
-                  key={stat.label}
-                  className="text-center lg:text-left"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}
-                >
-                  <div className="text-3xl sm:text-4xl bg-gradient-to-r from-[#0CB14B] to-[#cd2653] bg-clip-text text-transparent mb-1">
-                    {stat.number}
+                {/* Content */}
+                <div className="relative">
+                  <h3 className="text-lg mb-2 text-gray-900 group-hover:text-[#0CB14B] transition-colors">
+                    {integration.name}
+                  </h3>
+                  <p className="text-sm text-gray-600 leading-relaxed">
+                    {integration.description}
+                  </p>
+                </div>
+
+                {/* Hover Arrow */}
+                <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="w-6 h-6 rounded-full bg-[#0CB14B] flex items-center justify-center">
+                    <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
                   </div>
-                  <div className="text-sm text-gray-600">{stat.label}</div>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
+                </div>
+              </motion.a>
+            );
+          })}
         </div>
+
+        {/* CTA Buttons */}
+        <motion.div
+          className="flex flex-wrap gap-4 justify-center"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.8 }}
+        >
+          <a
+            href="#integrations"
+            className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-[#0CB14B] to-[#0CB14B]/90 text-white rounded-xl hover:shadow-lg hover:scale-105 transition-all"
+          >
+            Découvrir les intégrations
+          </a>
+          <a
+            href="https://can-nx.shop"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center px-8 py-4 border-2 border-gray-300 text-gray-700 rounded-xl hover:border-[#0CB14B] hover:text-[#0CB14B] hover:scale-105 transition-all"
+          >
+            Boutique en ligne
+          </a>
+        </motion.div>
       </div>
     </section>
   );
