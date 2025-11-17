@@ -1,0 +1,39 @@
+name: Create missing documentation files
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'mkdocs.yml'
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install yq
+        run: sudo apt-get install -y yq
+
+      - name: Parse mkdocs.yml and generate missing .md files
+        run: |
+          FILES=$(yq '.nav[] | .. | select(tag == "!!map") | .[] | select(tag == "!!str")' mkdocs.yml | sed 's/^ *//')
+          for f in $FILES; do
+            if [[ $f == *.md ]]; then
+              if [ ! -f "docs/$f" ]; then
+                echo "Creating docs/$f"
+                mkdir -p "$(dirname docs/$f)"
+                echo -e "# Coming Soon\nThis page is under construction." > "docs/$f"
+              fi
+            fi
+          done
+
+      - name: Commit new placeholder files
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add docs
+          git commit -m "Generate placeholder documentation files" || echo "No changes"
+          git push
