@@ -1,53 +1,49 @@
-# Can'nX Documentation
+<div class="hero">
+
+# Bienvenue dans la documentation Can’nX
 
 Porte d’entrée unique pour installer, configurer et maintenir l’écosystème Can’nX :
-Kloud’nX, Infini KNX, Boss’nX, Chart’nX, Emergy’nX, Speak’nX, Pool’nX et toutes les
-intégrations KNX / Modbus / MQTT / IP.
+Kloud’nX, Infini KNX, Boss’nX, Chart’nX, Emergy’nX, Speak’nX, Pool’nX et Modbus / KNX / MQTT.
 
-Installateurs  
-Intégrateurs KNX  
-Bureaux d’études  
+<div class="hero-buttons">
+<a href="getting-started/introduction.md" class="btn btn-primary">Guide de démarrage</a>
+<a href="products/overview.md" class="btn btn-secondary">Produits</a>
+</div>
+
+</div>
 
 ---
 
-## Par où commencer ?
+## Guides rapides
 
-### 1. Guide de démarrage
+<div class="card-grid">
 
-- [Introduction](getting-started/introduction.md)
-- [Prérequis système](getting-started/requirements.md)
-- [Assistant de configuration](getting-started/setup-wizard.md)
-- [Première connexion](getting-started/first-login.md)
+<div class="card">
+<h3>Guide de démarrage</h3>
+<p>Installation, prérequis, première connexion.</p>
+</div>
 
-### 2. Produits
+<div class="card">
+<h3>Produits Can’nX</h3>
+<p>Documentation complète pour chaque module.</p>
+</div>
 
-- [Vue d’ensemble des produits](products/overview.md)
-- [Kloud’nX](products/kloudnx/overview.md)
-- [Infini KNX](products/infinix/overview.md)
-- [Boss’nX](products/bossnx/overview.md)
-- [Chart’nX](products/chartnx/overview.md)
+<div class="card">
+<h3>Intégrations</h3>
+<p>KNX, Modbus, MQTT, Wi-Fi, API REST, vidéo…</p>
+</div>
 
-### 3. Intégrations
+<div class="card">
+<h3>Support</h3>
+<p>Dépannage, scénarios, communication bus, logs.</p>
+</div>
 
-- [Vue d’ensemble](integrations/overview.md)
-- [KNX](integrations/knx.md)
-- [Modbus](integrations/modbus.md)
-- [MQTT](integrations/mqtt.md)
+</div>
 
-### 4. Automatisations
+---
 
-- [Vue d’ensemble](automations/overview.md)
-- [Node-RED](automations/node-red/introduction.md)
-- [Scénarios](automations/examples/lighting.md)
+## Nouveautés
 
-### 5. Dépannage
-
-- [Problèmes courants](troubleshooting/common-issues.md)
-- [Communication KNX](troubleshooting/knx/diagnostics.md)
-
-### 6. Ressources
-
-- [Téléchargements](resources/downloads.md)
-- [Formations](resources/training.md)
-- [Vidéos](resources/videos.md)
-- [Support](contact/contact.md)
+- Infini KNX – Configurateur <span class="tag tag-new">NEW</span>  
+- Chart’nX – Export CSV <span class="tag tag-beta">BETA</span>  
+- Speak’nX – Commandes vocales avancées <span class="tag tag-pro">PRO</span>  
