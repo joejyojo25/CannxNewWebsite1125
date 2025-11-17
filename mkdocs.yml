@@ -9,7 +9,7 @@ theme:
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: green
+      primary: white
       accent: green
       toggle:
         icon: material/brightness-7
