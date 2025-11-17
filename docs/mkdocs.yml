@@ -1,7 +1,0 @@
-site_name: Can'nX Documentation
-
-theme:
-  name: material
-
-nav:
-  - Home: index.md
