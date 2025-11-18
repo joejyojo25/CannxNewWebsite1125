@@ -86,8 +86,6 @@ plugins:
         - de
   - tags
   - social
-  - redirects
-
 # ------------------------------
 # Markdown extensions
 # ------------------------------
