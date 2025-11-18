@@ -61,7 +61,7 @@ theme:
 # Load enhanced UI (CSS)
 # ------------------------------
 extra_css:
-  - assets/extra.css
+  - docs/assets/extra.css
 
 # ------------------------------
 # Social footer
