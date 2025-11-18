@@ -1,86 +1,287 @@
 /*******************************************************
- * ULTRA-COMPACT SIDEBAR (Improved readability)
+ * CAN’N’X – PREMIUM MKDOCS THEME (FULL WORKING VERSION)
  *******************************************************/
 
-/* Sidebar width (much smaller) */
-.md-sidebar--primary {
-  width: 170px !important;
-  min-width: 170px !important;
-  border-right: 1px solid rgba(0,0,0,0.05);
+/* =====================================================
+   GLOBAL TYPOGRAPHY & CONTENT WIDTH
+===================================================== */
+.md-content {
+  max-width: 980px;
 }
 
-/* Navigation container spacing */
-.md-nav__container {
-  padding-top: 0.4rem !important;
-  background-color: #ffffff !important;
+.md-typeset {
+  font-size: 1rem;
+  line-height: 1.7;
 }
 
-/* Section title */
-.md-nav__title {
-  font-size: 0.70rem !important;
-  font-weight: 700 !important;
-  padding: 0.5rem 0.9rem 0.25rem 1rem !important;
-  letter-spacing: 0.03em;
-  color: rgba(0,0,0,0.45);
+.md-typeset h1 {
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-top: 2.2rem;
 }
 
-/* Main links (clean + compact) */
-.md-nav__link {
-  padding: 0.30rem 0.8rem !important;
-  font-size: 0.80rem !important;
+.md-typeset h2 {
+  font-size: 1.7rem;
+  font-weight: 600;
+  margin-top: 2rem;
+}
+
+.md-typeset h3 {
+  font-size: 1.35rem;
+  font-weight: 600;
+  margin-top: 1.8rem;
+}
+
+
+/* =====================================================
+   HEADER – PREMIUM WHITE
+===================================================== */
+.md-header,
+.md-header__inner,
+.md-tabs {
+  background: #ffffff !important;
+  color: #1a1a1a !important;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
+.md-header-nav__title {
+  color: #1a1a1a !important;
+}
+
+
+/* =====================================================
+   HOMEPAGE HERO
+===================================================== */
+.hero {
+  padding: 3.2rem 2rem;
+  text-align: center;
+  background: linear-gradient(135deg, #e8fbea 0%, #ffffff 60%);
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  max-width: 740px;
+  margin: auto;
+  color: #444;
+  font-size: 1.15rem;
+}
+
+.hero-buttons {
+  margin-top: 1.8rem;
+}
+
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+.btn {
+  display: inline-block;
+  padding: 0.65rem 1.4rem;
+  border-radius: 8px;
+  text-decoration: none !important;
+  font-weight: 600;
+}
+
+.btn-primary {
+  background: #25c06b;
+  color: #fff !important;
+}
+
+.btn-primary:hover {
+  background: #1fa85d;
+}
+
+.btn-secondary {
+  background: #fff;
+  color: #25c06b !important;
+  border: 1px solid #25c06b;
+}
+
+.btn-secondary:hover {
+  background: #eafff2;
+}
+
+
+/* =====================================================
+   CARD GRID (FIXED CUTTING ISSUES)
+===================================================== */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.3rem;
+  margin: 2rem 0;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #eee;
+  padding: 1.4rem;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+  transition: 0.18s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 12px rgba(0,0,0,0.08);
+}
+
+.card h3 {
+  font-size: 1.22rem;
+  margin-top: 0;
+}
+
+.card p {
+  color: #555;
+}
+
+
+/* =====================================================
+   TAGS (NEW, BETA, PRO)
+===================================================== */
+.tag {
+  display: inline-block;
+  padding: 0.15rem 0.55rem;
+  font-size: 0.75rem;
+  font-weight: 600;
   border-radius: 4px;
+  margin-left: 0.4rem;
 }
 
-/* Hover effect */
-.md-nav__link:hover {
-  background: rgba(0,0,0,0.03);
+.tag-new {
+  background: #eaf7ff;
+  color: #0077cc;
 }
 
-/* Active highlight */
-.md-nav__link--active {
-  background: rgba(37,192,107,0.10) !important;
-  border-left: 3px solid #25c06b !important;
-  padding-left: calc(0.8rem - 3px) !important;
-  font-weight: 600 !important;
+.tag-beta {
+  background: #fff6e1;
+  color: #d79a00;
 }
 
-/* Children level (#2) */
-.md-nav__item .md-nav__link[data-level="2"] {
-  padding-left: 1.1rem !important;
-  font-size: 0.78rem !important;
-  opacity: 0.9;
+.tag-pro {
+  background: #e9ffe9;
+  color: #22a844;
 }
 
-/* Reduce vertical spacing in sidebar */
-.md-nav__list {
-  padding: 0.1rem 0 !important;
+
+/* =====================================================
+   TABLE STYLING
+===================================================== */
+.md-typeset table:not([class]) {
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
-.md-nav__section {
-  margin-bottom: 0.2rem !important;
-  padding-bottom: 0.2rem !important;
-  border-bottom: 1px solid rgba(0,0,0,0.05);
+
+/* =====================================================
+   BLOCKQUOTES
+===================================================== */
+.md-typeset blockquote {
+  border-left: 5px solid #25c06b;
+  background: #f3fff7;
+  padding: 0.8rem 1rem;
+  border-radius: 6px;
+}
+
+
+/* =====================================================
+   CODE BLOCKS
+===================================================== */
+.md-typeset pre {
+  background: #f8f9fa;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: inset 0 0 0 1px #e6e8eb;
 }
 
 
 /*******************************************************
- * SMALL & CLEAN NEXT/PREV FOOTER BUTTONS
+ * SIDEBAR – FULLY COMPACT AND STABLE
+ *******************************************************/
+.md-sidebar--primary {
+  width: 165px !important;
+  min-width: 165px !important;
+  border-right: 1px solid rgba(0,0,0,0.07);
+  background: #ffffff !important;
+}
+
+/* Remove extra background layers */
+.md-nav,
+.md-nav__container {
+  background: #ffffff !important;
+}
+
+/* Section titles */
+.md-nav__title {
+  font-size: 0.70rem !important;
+  padding: 0.5rem 0.8rem 0.3rem 1rem !important;
+  color: rgba(0,0,0,0.45);
+  text-transform: uppercase;
+  font-weight: 700 !important;
+}
+
+/* Links */
+.md-nav__link {
+  font-size: 0.80rem !important;
+  padding: 0.30rem 0.75rem !important;
+}
+
+.md-nav__link:hover {
+  background: rgba(0,0,0,0.04);
+}
+
+/* Active */
+.md-nav__link--active {
+  background: rgba(37,192,107,0.08) !important;
+  border-left: 3px solid #25c06b !important;
+  padding-left: calc(0.75rem - 3px) !important;
+  font-weight: 600 !important;
+}
+
+/* Child links */
+.md-nav__item .md-nav__link[data-level="2"] {
+  font-size: 0.78rem !important;
+  padding-left: 1.1rem !important;
+}
+
+
+/*******************************************************
+ * FOOTER NAV – ULTRA SMALL (AS REQUESTED)
  *******************************************************/
 .md-footer-nav {
-  padding: 0.3rem 1rem !important;
+  padding: 0.2rem 0.6rem !important;
 }
 
 .md-footer-nav__link {
-  padding: 0.45rem 0.8rem !important;
-  font-size: 0.78rem !important;
+  padding: 0.35rem 0.6rem !important;
+  font-size: 0.72rem !important;
 }
 
 .md-footer-nav__title {
-  font-size: 0.70rem !important;
+  font-size: 0.65rem !important;
   opacity: 0.85;
 }
 
 .md-icon svg {
-  width: 0.75rem !important;
-  height: 0.75rem !important;
+  width: 0.7rem !important;
+  height: 0.7rem !important;
+}
+
+
+/*******************************************************
+ * MOBILE FIXES
+ *******************************************************/
+@media (max-width: 800px) {
+  .md-sidebar--primary {
+    width: 100% !important;
+    min-width: 100% !important;
+  }
 }
