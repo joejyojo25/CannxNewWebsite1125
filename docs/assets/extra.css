@@ -1,23 +1,26 @@
 /*******************************************************
- * Can'nX – Custom theme for MkDocs Material
+ * Can'nX – Custom theme for MkDocs Material (REFINED)
  *******************************************************/
 
 
 /* =====================================================
-   GLOBAL TYPOGRAPHY & CONTENT WIDTH
+    GLOBAL TYPOGRAPHY & CONTENT WIDTH
 ===================================================== */
 
+/* Keep content max width to 980px */
 .md-content {
   max-width: 980px;
   margin: 0 auto;
 }
 
+/* Base typography refinement: Slightly smaller font for a less bulky feel */
 .md-typeset {
-  font-size: 0.95rem;
-  line-height: 1.65;
+  font-size: 0.90rem; /* Reduced from 0.95rem */
+  line-height: 1.6;  /* Reduced line height slightly */
   color: #1a1a1a;
 }
 
+/* Headings sizes are kept, as they seem reasonable */
 .md-typeset h1 {
   font-size: 2.3rem;
   font-weight: 600;
@@ -35,7 +38,7 @@
 
 
 /* =====================================================
-   HEADER
+    HEADER
 ===================================================== */
 
 .md-header,
@@ -51,7 +54,7 @@
 
 
 /* =====================================================
-   TABS (TOP NAV) – FONT 1rem, COMPACT
+    TABS (TOP NAV) – MORE COMPACT
 ===================================================== */
 
 .md-tabs {
@@ -62,7 +65,7 @@
 .md-tabs__list {
   max-width: 980px;
   margin: 0 auto;
-  overflow-x: auto;       /* tabs scroll inside if needed */
+  overflow-x: auto;
   white-space: nowrap;
 }
 
@@ -70,14 +73,15 @@
   display: inline-block;
 }
 
+/* Compact tabs: Reduced padding and smaller font size */
 .md-tabs__link {
   display: inline-flex;
   align-items: center;
-  padding: 0.35rem 0.75rem;
-  font-size: 1rem;        /* requested size */
+  padding: 0.3rem 0.6rem; /* Reduced from 0.35rem 0.75rem */
+  font-size: 0.95rem;     /* Reduced from 1rem */
   font-weight: 500;
   border-radius: 6px;
-  margin-right: 0.25rem;
+  margin-right: 0.2rem;   /* Reduced margin */
   color: #444444;
   white-space: nowrap;
 }
@@ -100,7 +104,7 @@
 
 
 /*******************************************************
- * SIDEBAR – WIDE + COMPACT, FIXED FONT
+ * SIDEBAR – WIDE + COMPACT, FIXED FONT (KEPT AS IS)
  *******************************************************/
 
 .md-sidebar--primary {
@@ -150,7 +154,7 @@
 
 
 /*******************************************************
- * HERO, CARDS, BUTTONS
+ * HERO, CARDS, BUTTONS (KEPT AS IS)
  *******************************************************/
 
 /* optional hero block on home page */
@@ -231,7 +235,7 @@
 
 
 /*******************************************************
- * TABLES, QUOTES, CODE
+ * TABLES, QUOTES, CODE (KEPT AS IS)
  *******************************************************/
 
 .md-typeset table:not([class]) {
@@ -256,7 +260,7 @@
 
 
 /*******************************************************
- * FOOTER – PREVIOUS / NEXT ONLY UNDER CONTENT WIDTH
+ * FOOTER – PREVIOUS / NEXT FIXED TO CONTENT WIDTH
  *******************************************************/
 
 /* base footer background stays light */
@@ -264,18 +268,22 @@
   background: transparent;
   color: inherit;
   border-top: none;
+  /* Added max-width here to potentially prevent the dark bar from spanning the whole width */
+  max-width: 980px; 
+  margin: 0 auto;
 }
 
 /* dark bar only under content column */
 .md-footer__inner {
-  max-width: 980px;              /* same as .md-content */
-  margin: 0 auto;
+  /* Removed max-width here as it should inherit from .md-footer */
   background: #212121;
   color: #ffffff;
   padding: 0.35rem 0.6rem;
   display: flex;
   justify-content: space-between;
   box-sizing: border-box;
+  /* Ensure it doesn't span beyond the content area */
+  width: 100%; 
 }
 
 /* previous/next links */
@@ -302,12 +310,14 @@
   height: 0.75rem;
 }
 
-/* copyright + social bar below */
+/* copyright + social bar below - Adjusted to span full width again for typical footer appearance */
 .md-footer-meta {
   background: #111111;
   color: #ffffff;
   font-size: 0.75rem;
   padding: 0.6rem 1rem;
+  /* Reset width to 100% to span the viewport */
+  width: 100%; 
 }
 
 
@@ -316,16 +326,30 @@
  *******************************************************/
 
 @media (max-width: 960px) {
+  /* Ensured primary sidebar behaves well on mobile */
   .md-sidebar--primary {
     width: 100%;
     min-width: 100%;
   }
 
+  /* Added padding to content for better mobile display */
+  .md-content {
+    padding: 0 0.5rem;
+  }
+  
   .md-tabs__list {
     padding: 0 0.5rem;
   }
 
+  /* Adjusted footer inner margin for mobile */
   .md-footer__inner {
     margin: 0 0.5rem;
+    max-width: none; /* Allow full width on smaller screens */
+  }
+  
+  /* Reset global footer max-width for mobile */
+  .md-footer {
+    max-width: none;
+    margin: 0;
   }
 }
