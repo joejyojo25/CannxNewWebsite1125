@@ -1,5 +1,5 @@
 /*******************************************************
- * Can'nX – Custom theme for MkDocs Material (REFINED)
+ * Can'nX – Custom theme for MkDocs Material (REFINED v2)
  *******************************************************/
 
 
@@ -13,10 +13,10 @@
   margin: 0 auto;
 }
 
-/* Base typography refinement: Slightly smaller font for a less bulky feel */
+/* Base typography: Reduced for a more professional, tighter document feel */
 .md-typeset {
-  font-size: 0.90rem; /* Reduced from 0.95rem */
-  line-height: 1.6;  /* Reduced line height slightly */
+  font-size: 0.90rem; 
+  line-height: 1.6;  
   color: #1a1a1a;
 }
 
@@ -54,7 +54,7 @@
 
 
 /* =====================================================
-    TABS (TOP NAV) – MORE COMPACT
+    TABS (TOP NAV) – MORE COMPACT (REFINED)
 ===================================================== */
 
 .md-tabs {
@@ -73,15 +73,15 @@
   display: inline-block;
 }
 
-/* Compact tabs: Reduced padding and smaller font size */
+/* Tighter tabs: Reduced padding and font size further */
 .md-tabs__link {
   display: inline-flex;
   align-items: center;
-  padding: 0.3rem 0.6rem; /* Reduced from 0.35rem 0.75rem */
-  font-size: 0.95rem;     /* Reduced from 1rem */
+  padding: 0.25rem 0.5rem; /* Reduced from 0.3rem 0.6rem */
+  font-size: 0.9rem;       /* Reduced from 0.95rem */
   font-weight: 500;
   border-radius: 6px;
-  margin-right: 0.2rem;   /* Reduced margin */
+  margin-right: 0.2rem;   
   color: #444444;
   white-space: nowrap;
 }
@@ -104,7 +104,7 @@
 
 
 /*******************************************************
- * SIDEBAR – WIDE + COMPACT, FIXED FONT (KEPT AS IS)
+ * SIDEBAR – WIDE + COMPACT, FIXED FONT (REFINED)
  *******************************************************/
 
 .md-sidebar--primary {
@@ -117,7 +117,7 @@
 /* titles inside sidebar sections */
 .md-sidebar--primary .md-nav__title {
   font-family: "Roboto", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-size: 0.78rem;
+  font-size: 0.75rem; /* Reduced from 0.78rem */
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.03em;
@@ -126,18 +126,18 @@
   color: rgba(0, 0, 0, 0.45);
 }
 
-/* links */
+/* links - Reduced font size for less bulk */
 .md-sidebar--primary .md-nav__link {
   font-family: "Roboto", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  padding: 0.40rem 1rem;
-  font-size: 0.92rem;
+  padding: 0.35rem 1rem; /* Reduced padding slightly */
+  font-size: 0.88rem;   /* Reduced from 0.92rem */
   border-radius: 6px;
 }
 
-/* second level links */
+/* second level links - Reduced font size for less bulk */
 .md-sidebar--primary .md-nav__item .md-nav__link[data-level="2"] {
   padding-left: 1.4rem;
-  font-size: 0.85rem;
+  font-size: 0.82rem; /* Reduced from 0.85rem */
 }
 
 /* hover + active */
@@ -260,35 +260,40 @@
 
 
 /*******************************************************
- * FOOTER – PREVIOUS / NEXT FIXED TO CONTENT WIDTH
+ * FOOTER – PREVIOUS / NEXT FIXED & LIGHTER BACKGROUND (FIXED)
  *******************************************************/
 
-/* base footer background stays light */
+/* base footer container */
 .md-footer {
   background: transparent;
   color: inherit;
   border-top: none;
-  /* Added max-width here to potentially prevent the dark bar from spanning the whole width */
   max-width: 980px; 
   margin: 0 auto;
 }
 
-/* dark bar only under content column */
+/* Footer navigation bar: Changed background color */
 .md-footer__inner {
-  /* Removed max-width here as it should inherit from .md-footer */
-  background: #212121;
-  color: #ffffff;
-  padding: 0.35rem 0.6rem;
+  background: #f8f8f8; /* Changed from #212121 (black) to light gray */
+  color: #444444;    /* Changed text color from white to dark gray */
+  border-top: 1px solid rgba(0, 0, 0, 0.08); /* Added subtle separator */
+  padding: 0.6rem 0.6rem; /* Increased padding slightly for comfort */
   display: flex;
   justify-content: space-between;
   box-sizing: border-box;
-  /* Ensure it doesn't span beyond the content area */
   width: 100%; 
 }
 
-/* previous/next links */
+/* previous/next links - Adjusted hover/active color for light background */
 .md-footer__link {
   padding: 0.25rem 0.4rem;
+  color: #444444;
+  transition: all 0.15s ease-in-out;
+}
+
+.md-footer__link:hover {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
 }
 
 .md-footer__button {
@@ -297,26 +302,27 @@
 
 .md-footer__direction {
   font-size: 0.7rem;
-  opacity: 0.85;
+  opacity: 0.7; /* Reduced opacity for direction text */
 }
 
 .md-footer__title {
   font-size: 0.78rem;
+  font-weight: 500;
 }
 
 /* smaller arrows */
 .md-footer__button .md-icon svg {
   width: 0.75rem;
   height: 0.75rem;
+  fill: #444444; /* Ensure icon color matches text */
 }
 
-/* copyright + social bar below - Adjusted to span full width again for typical footer appearance */
+/* copyright + social bar below - Kept dark for contrast */
 .md-footer-meta {
   background: #111111;
   color: #ffffff;
   font-size: 0.75rem;
   padding: 0.6rem 1rem;
-  /* Reset width to 100% to span the viewport */
   width: 100%; 
 }
 
@@ -344,7 +350,7 @@
   /* Adjusted footer inner margin for mobile */
   .md-footer__inner {
     margin: 0 0.5rem;
-    max-width: none; /* Allow full width on smaller screens */
+    max-width: none;
   }
   
   /* Reset global footer max-width for mobile */
