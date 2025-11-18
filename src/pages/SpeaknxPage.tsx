@@ -160,7 +160,7 @@ export function SpeaknxPage() {
               <ImageWithFallback
                 src={speaknxProduct}
                 alt="Speak'nX - 4 finitions disponibles"
-                className="w-1/2 h-auto drop-shadow-2xl mx-auto"
+                className="w-full h-auto drop-shadow-2xl"
               />
             </div>
           </motion.div>

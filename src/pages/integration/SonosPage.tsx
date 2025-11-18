@@ -5,7 +5,6 @@ import { Card } from '../../components/ui/card';
 import { Badge } from '../../components/ui/badge';
 import { Breadcrumb } from '../../components/Breadcrumb';
 import { ImageWithFallback } from '../../components/figma/ImageWithFallback';
-import { BrandLogo } from '../../components/BrandLogo';
 import {
   Accordion,
   AccordionContent,
@@ -192,10 +191,6 @@ export function SonosPage() {
                 <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
                 Retour aux intégrations
               </a>
-
-              <div className="mb-6">
-                <BrandLogo brandId="sonos" size="lg" />
-              </div>
 
               <Badge className="mb-4 bg-purple-600">
                 <Music className="w-4 h-4 mr-2" />
