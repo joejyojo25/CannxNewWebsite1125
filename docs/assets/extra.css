@@ -1,22 +1,15 @@
 /*******************************************************
- * Can'nX – Custom theme for MkDocs Material (REFINED v4 - AGGRESSIVE FIX)
+ * Can'nX – Custom theme for MkDocs Material (FINAL WORKING VERSION)
  *******************************************************/
 
 /* --- GLOBAL LAYOUT FIXES --- */
 
 /* 1. Ensure the content area is constrained */
 .md-content {
-  max-width: 980px;
-  margin: 0 auto;
-  padding-left: 0;
-  padding-right: 0;
-}
-
-/* 2. Fix for the main wrapper padding causing overflow/width issues */
-.md-main__inner {
-    /* If the theme adds default padding, we must compensate or remove it */
-    padding-left: 0;
-    padding-right: 0;
+  max-width: 980px !important;
+  margin: 0 auto !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
 
 /* --- TYPOGRAPHY (Maximum Specificity to Override Defaults) --- */
@@ -28,7 +21,7 @@
   color: #1a1a1a !important;
 }
 
-/* Headings */
+/* Headings (Kept sizes from previous request) */
 .md-typeset h1 { font-size: 2.3rem !important; }
 .md-typeset h2 { font-size: 1.8rem !important; }
 .md-typeset h3 { font-size: 1.35rem !important; }
@@ -36,6 +29,11 @@
 /* =====================================================
     TABS (TOP NAV) – COMPACT (FORCED)
 ===================================================== */
+
+.md-tabs__list {
+  max-width: 980px !important;
+  margin: 0 auto !important;
+}
 
 /* Tighter tabs: Reduced padding and font size */
 .md-tabs__link {
@@ -52,13 +50,14 @@
   color: #000000 !important;
 }
 
+
 /* =====================================================
  * SIDEBAR – COMPACT (FORCED)
  *===================================================== */
 
 .md-sidebar--primary {
-    width: 260px;
-    min-width: 260px;
+    width: 260px !important;
+    min-width: 260px !important;
     border-right: 1px solid rgba(0, 0, 0, 0.08);
 }
 
@@ -80,37 +79,45 @@
   font-size: 0.82rem !important; 
 }
 
-
 /* =====================================================
- * FOOTER – PREVIOUS / NEXT COMPACT & LIGHT GRAY (FORCED FIX)
+ * FOOTER – PREVIOUS / NEXT BUTTONS (GREEN & CONSTRAINED)
  *===================================================== */
 
-/* 1. Force the main footer section to respect content width */
+/* 1. Ensure the main footer section is transparent and respects content width */
 .md-footer {
-  /* Set background to light gray for the section above the copyright bar */
   background: transparent !important; 
   border-top: none !important;
-  color: inherit !important;
 }
 
-/* 2. Target the *content area* inside the footer wrapper */
+/* 2. Target the *navigation bar* (GREEN THEME & COMPACT) */
 .md-footer__inner {
-  /* FIX: Change black to light gray and reduce height */
-  background: #f0f0f0 !important; 
-  color: #444444 !important;    
-  border: 1px solid rgba(0, 0, 0, 0.08) !important; 
-  border-radius: 6px; 
-  padding: 0.4rem 0.6rem !important; /* Reduced vertical padding */
+  /* FIX: GREEN BACKGROUND */
+  background: #25c06b !important; /* Your brand green */
+  color: #ffffff !important;    /* White text for contrast */
+  border: none !important; 
+  border-radius: 6px !important; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  /* COMPACT HEIGHT */
+  padding: 0.4rem 0.8rem !important; 
   
-  /* Ensure it doesn't span full width on desktop */
+  /* CONSTRAIN TO CONTENT WIDTH */
   max-width: 980px !important;
-  margin: 0 auto !important; 
+  margin: 0 auto !important; /* Center it under the content */
 }
 
 /* previous/next links text and size */
 .md-footer__link {
   padding: 0.15rem 0.3rem !important; 
-  color: #444444 !important;
+  color: #ffffff !important; 
+  opacity: 0.9;
+  transition: all 0.1s ease-in-out;
+}
+
+.md-footer__link:hover {
+  background: rgba(255, 255, 255, 0.15) !important;
+  border-radius: 4px;
+  opacity: 1;
 }
 
 .md-footer__button {
@@ -123,40 +130,25 @@
 }
 
 .md-footer__button .md-icon svg {
-  fill: #444444 !important;
+  fill: #ffffff !important; /* White icons */
 }
 
-/* 3. Copyright bar must span full width (This part will remain dark and full width) */
+/* 3. Copyright bar (Dark, full width, and detached) */
 .md-footer-meta {
   background: #111111 !important;
   color: #ffffff !important;
   font-size: 0.75rem !important;
   padding: 0.6rem 1rem !important;
   width: 100% !important; 
-  margin-top: 1.5rem !important; 
+  margin-top: 1.5rem !important; /* Spacing between navigation and copyright */
 }
 
-
-/* --- REST OF THE CODE (Kept for completeness) --- */
-
-.md-header, .md-header__inner { background: #ffffff; color: #1a1a1a; border-bottom: 1px solid rgba(0, 0, 0, 0.08); }
-.md-header__title { color: #1a1a1a; }
-.md-tabs { background: #ffffff; border-bottom: 1px solid rgba(0, 0, 0, 0.08); }
-.md-tabs__list { max-width: 980px; margin: 0 auto; overflow-x: auto; white-space: nowrap; }
-.md-tabs__link::after { display: none; }
-.md-sidebar--primary .md-nav__link:hover { background: rgba(0, 0, 0, 0.04); }
-.md-sidebar--primary .md-nav__link--active { background: rgba(37, 192, 107, 0.15); border-left: 3px solid #25c06b; padding-left: calc(1rem - 3px); font-weight: 600; }
-.md-typeset table:not([class]) { border: 1px solid #e0e0e0; border-radius: 10px; overflow: hidden; }
-.md-typeset blockquote { border-left: 5px solid #25c06b; background: #f3fff7; padding: 1rem; border-radius: 6px; }
-.md-typeset pre { border-radius: 10px; background: #f8f9fa; padding: 1rem; box-shadow: inset 0 0 0 1px #e6e8eb; }
-
-
 /* =====================================================
- * RESPONSIVE
+ * RESPONSIVE (Ensure footer scales on mobile)
  *===================================================== */
 
 @media (max-width: 960px) {
-  /* Mobile: Ensure the main footer container can span full width again */
+  /* Mobile: Allow full width */
   .md-footer {
     max-width: none !important;
     margin: 0 !important;
@@ -167,5 +159,6 @@
   .md-footer__inner {
     margin: 0 !important;
     max-width: none !important;
+    border-radius: 0 !important; /* Remove corner rounding on mobile */
   }
 }
