@@ -1,6 +1,6 @@
 <div class="hero">
 
-# Bienvenue dans la documentation Can’nX
+# Bienvenue dans la documentation Can’nX 
 
 Porte d’entrée unique pour installer, configurer et maintenir l’écosystème Can’nX :
 Kloud’nX, Infini KNX, Boss’nX, Chart’nX, Emergy’nX, Speak’nX, Pool’nX et Modbus / KNX / MQTT.
