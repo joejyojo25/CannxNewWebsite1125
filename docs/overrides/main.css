@@ -1,8 +1,27 @@
 /*******************************************************
- * Can'nX – Custom theme for MkDocs Material (FINAL WORKING VERSION)
+ * Can'nX – CSS Variables Override (FINAL FIX)
  *******************************************************/
 
-/* --- GLOBAL LAYOUT FIXES --- */
+:root {
+  /* =====================================================
+     HIGH-PRIORITY COLOR VARIABLE OVERRIDES
+     This targets the variables used by the theme's internal footer/header logic.
+     ===================================================== */
+  
+  /* Primary background color for the header/content wrapper (Keeping it white) */
+  --md-default-bg-color: #ffffff !important; 
+  
+  /* Footer Background Color (The Next/Previous Bar) - Set to your brand green */
+  --md-footer-bg-color--primary: #25c06b !important;
+  
+  /* Footer Text Color */
+  --md-footer-fg-color: #ffffff !important;
+
+  /* Copyright Bar Color (Kept dark gray) */
+  --md-footer-bg-color--secondary: #111111 !important;
+}
+
+/* --- GLOBAL LAYOUT FIXES (Retained) --- */
 
 /* 1. Ensure the content area is constrained */
 .md-content {
@@ -12,7 +31,7 @@
   padding-right: 0 !important;
 }
 
-/* --- TYPOGRAPHY (Maximum Specificity to Override Defaults) --- */
+/* --- TYPOGRAPHY (Retained) --- */
 
 /* Base typography: Reduced and forced */
 .md-typeset {
@@ -22,72 +41,19 @@
 }
 
 /* =====================================================
-    TABS (TOP NAV) – COMPACT (FORCED)
+    FOOTER CLASS OVERRIDES (To handle shape/size/links)
 ===================================================== */
 
-.md-tabs__list {
-  max-width: 980px !important;
-  margin: 0 auto !important;
-}
-
-/* Tighter tabs: Reduced padding and font size */
-.md-tabs__link {
-  padding: 0.25rem 0.5rem !important; 
-  font-size: 0.9rem !important;      
-  font-weight: 500 !important;
-  color: #444444 !important;
-}
-
-.md-tabs__item--active .md-tabs__link {
-  background: rgba(37, 192, 107, 0.14) !important;
-  border-bottom: 2px solid #25c06b !important;
-  color: #000000 !important;
-}
-
-
-/* =====================================================
- * SIDEBAR – COMPACT (FORCED)
- *===================================================== */
-
-/* Sidebar width */
-.md-sidebar--primary {
-    width: 260px !important;
-    min-width: 260px !important;
-}
-
-/* titles inside sidebar sections */
-.md-sidebar--primary .md-nav__title {
-  font-size: 0.75rem !important; 
-  padding: 0.6rem 1rem 0.3rem !important;
-}
-
-/* links - Reduced font size and padding */
-.md-sidebar--primary .md-nav__link {
-  padding: 0.35rem 1rem !important; 
-  font-size: 0.88rem !important; 
-}
-
-/* second level links - Reduced font size */
-.md-sidebar--primary .md-nav__item .md-nav__link[data-level="2"] {
-  padding-left: 1.4rem !important;
-  font-size: 0.82rem !important; 
-}
-
-/* =====================================================
- * FOOTER – PREVIOUS / NEXT BUTTONS (GREEN & CONSTRAINED)
- *===================================================== */
-
-/* 1. Ensure the main footer container background is overridden to light/transparent */
+/* 1. Ensure the main footer container is transparent */
 .md-footer {
-  background-color: #ffffff !important; 
+  background-color: transparent !important; 
   border-top: none !important;
 }
 
-/* 2. Target the *navigation bar* for the green theme and size fix */
+/* 2. Target the *navigation bar* for size and shape */
 .md-footer__inner {
-  /* FIX: GREEN BACKGROUND */
-  background: #25c06b !important; /* Your brand green */
-  color: #ffffff !important;    /* White text for contrast */
+  /* Use the background variable, but ensure constraints are applied */
+  color: #ffffff !important;
   border: none !important; 
   border-radius: 6px !important; 
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -97,12 +63,7 @@
   
   /* CONSTRAIN TO CONTENT WIDTH */
   max-width: 980px !important;
-  margin: 0 auto !important;
-}
-
-/* Fix for possible conflicting background on surrounding elements */
-.md-footer-nav, .md-footer-nav__inner {
-    background-color: transparent !important;
+  margin: 1.5rem auto 1.5rem !important; /* Center it and give space */
 }
 
 /* Footer links and icons */
@@ -116,18 +77,16 @@
   fill: #ffffff !important; 
 }
 
-/* 3. Copyright bar (Dark, full width, and detached) */
+/* 3. Copyright bar (Dark, full width) - Using the variable ensures color */
 .md-footer-meta {
-  background: #111111 !important;
   color: #ffffff !important;
   font-size: 0.75rem !important;
   padding: 0.6rem 1rem !important;
   width: 100% !important; 
-  margin-top: 1.5rem !important; 
 }
 
 /* =====================================================
- * RESPONSIVE 
+ * RESPONSIVE (Retained)
  *===================================================== */
 
 @media (max-width: 960px) {
