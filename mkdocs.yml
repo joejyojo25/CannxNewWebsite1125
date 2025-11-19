@@ -49,7 +49,7 @@ theme:
     code: Roboto Mono
 
   logo: assets/logo.png
-  favicon: assets/favicon.png
+  favicon: assets/favicon.ico
 
 extra_css:
   - assets/extra.css
