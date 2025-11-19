@@ -1,10 +1,12 @@
 <!-- prettier-ignore-start -->
 <div class="hero">
 
-# Bienvenue dans la documentation Can’nX 
+<h1>Bienvenue dans la documentation Can’nX</h1>
 
+<p>
 Porte d’entrée unique pour installer, configurer et maintenir l’écosystème Can’nX :
 Kloud’nX, Infini KNX, Boss’nX, Chart’nX, Emergy’nX, Speak’nX, Pool’nX et Modbus / KNX / MQTT.
+</p>
 
 <div class="hero-buttons">
   <a href="getting-started/introduction/" class="btn btn-primary">Guide de démarrage</a>
