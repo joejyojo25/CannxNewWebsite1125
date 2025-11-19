@@ -1,13 +1,16 @@
 /*******************************************************
- *  CAN’N'X — FINAL UI OVERRIDES (OPTION B)
- *  Compact Sidebar • Fixed Top Menu • Green Footer
- *  MkDocs Material v9 — Fully Overriding Version
+ *  CAN’N'X — COMPLETE UI SYSTEM (FINAL VERSION)
+ *  Includes: Top menu, sidebar, footer, hero, buttons,
+ *  cards, grids, tags, sections, alerts, utilities,
+ *  typography blocks, image helpers, shadows.
+ *  MkDocs Material v9 fully overridden.
  *******************************************************/
 :root {}
 
 
+
 /* ======================================================
-   1) TOP MENU — smaller, clean, aligned
+   1) TOP MENU
 ====================================================== */
 .md-header__inner nav .md-nav__item .md-nav__link {
   font-size: 0.82rem !important;
@@ -29,9 +32,11 @@
 }
 
 
+
 /* ======================================================
-   2) COMPACT SIDEBAR (Option B) — UPDATED (no border)
+   2) COMPACT SIDEBAR
 ====================================================== */
+
 .md-sidebar--primary {
   width: 240px !important;
 }
@@ -66,9 +71,11 @@
 }
 
 
+
 /* ======================================================
-   3) FOOTER — FORCE FULL GREEN (Light + Dark)
+   3) GREEN FOOTER
 ====================================================== */
+
 .md-footer,
 .md-footer__inner,
 .md-footer-meta {
@@ -83,22 +90,19 @@
   opacity: 0.9 !important;
 }
 
-.md-footer a:hover,
-.md-footer__inner a:hover,
-.md-footer-meta a:hover {
+.md-footer a:hover {
   opacity: 1 !important;
 }
 
-[data-md-color-scheme="slate"] .md-footer,
-[data-md-color-scheme="slate"] .md-footer__inner,
-[data-md-color-scheme="slate"] .md-footer-meta {
+[data-md-color-scheme="slate"] .md-footer {
   background-color: #00994d !important;
   color: #ffffff !important;
 }
 
 
+
 /* ======================================================
-   4) PREVIOUS/NEXT — Compact + Inside Content Only
+   4) PREVIOUS / NEXT
 ====================================================== */
 .md-footer-nav {
   display: none !important;
@@ -123,10 +127,10 @@
   color: #333 !important;
 }
 
-.md-footer-nav--local {
-  width: 100% !important;
-  margin-left: 0 !important;
-  box-shadow: none !important;
+.md-footer-nav--local a {
+  color: #333 !important;
+  font-weight: 500 !important;
+  text-decoration: none !important;
 }
 
 .md-footer-nav--local svg {
@@ -134,32 +138,91 @@
   height: 16px !important;
 }
 
-.md-footer-nav--local a {
-  color: #333 !important;
-  font-size: 13px !important;
-  font-weight: 500 !important;
-  text-decoration: none !important;
-}
 
 
 /* ======================================================
-   5) CONTENT WIDTH (stable layout)
+   5) CONTENT WIDTH
 ====================================================== */
 .md-content {
   max-width: 980px !important;
 }
 
-
-/* ======================================================
-   6) OPTIONAL: improve spacing on page top
-====================================================== */
 .md-main__inner {
   padding-top: 1rem !important;
 }
 
 
+
 /* ======================================================
-   7) HOME PAGE CARDS — FULL SUPPORT
+   6) HERO SECTION
+====================================================== */
+
+.hero {
+  padding: 3rem 2rem !important;
+  background: linear-gradient(135deg, #e8fbea, #ffffff 65%) !important;
+  border-radius: 14px !important;
+  margin-bottom: 2.5rem !important;
+  text-align: center !important;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05) !important;
+}
+
+.hero h1 {
+  margin-top: 0 !important;
+  font-size: 2.2rem !important;
+  margin-bottom: 1rem !important;
+}
+
+.hero p {
+  font-size: 1.05rem !important;
+  color: #444 !important;
+  max-width: 700px !important;
+  margin: 0 auto 1.5rem !important;
+}
+
+
+
+/* ======================================================
+   7) HERO BUTTONS
+====================================================== */
+
+.hero-buttons {
+  margin-top: 1.5rem !important;
+  display: flex !important;
+  justify-content: center !important;
+  gap: 1rem !important;
+  flex-wrap: wrap !important;
+}
+
+.btn {
+  padding: 0.75rem 1.4rem !important;
+  font-size: 0.95rem !important;
+  text-decoration: none !important;
+  border-radius: 8px !important;
+  font-weight: 600 !important;
+  display: inline-block !important;
+}
+
+.btn-primary {
+  background: #00994d !important;
+  color: #fff !important;
+}
+.btn-primary:hover {
+  background: #007f3f !important;
+}
+
+.btn-secondary {
+  background: #f3f3f3 !important;
+  color: #333 !important;
+  border: 1px solid #dcdcdc !important;
+}
+.btn-secondary:hover {
+  background: #e7e7e7 !important;
+}
+
+
+
+/* ======================================================
+   8) CARDS
 ====================================================== */
 
 .card-grid {
@@ -187,13 +250,137 @@
 
 .card h3 {
   margin-top: 0 !important;
-  margin-bottom: 0.6rem !important;
   font-size: 1.1rem !important;
-  color: #000 !important;
 }
 
 .card p {
   font-size: 0.90rem !important;
-  margin: 0 !important;
   color: #444 !important;
 }
+
+
+
+/* ======================================================
+   9) TAGS (NEW / BETA / PRO)
+====================================================== */
+
+.tag {
+  padding: 0.15rem 0.5rem !important;
+  border-radius: 5px !important;
+  font-size: 0.75rem !important;
+  font-weight: 600 !important;
+  color: #fff !important;
+}
+
+.tag-new { background: #00994d !important; }
+.tag-beta { background: #ff9800 !important; }
+.tag-pro { background: #673ab7 !important; }
+
+
+
+/* ======================================================
+   10) CONTENT BOXES (for future use)
+====================================================== */
+
+.box {
+  background: #fff !important;
+  border: 1px solid #e0e0e0 !important;
+  padding: 1.2rem !important;
+  border-radius: 10px !important;
+  margin: 1rem 0 !important;
+}
+
+.box-green {
+  border-left: 4px solid #00994d !important;
+}
+
+.box-yellow {
+  border-left: 4px solid #ff9800 !important;
+}
+
+
+
+/* ======================================================
+   11) ALERT / INFO / SUCCESS / WARNING
+====================================================== */
+
+.alert {
+  padding: 1rem 1.2rem !important;
+  border-radius: 8px !important;
+  margin: 1rem 0 !important;
+  color: #fff !important;
+}
+
+.alert-success { background: #00994d !important; }
+.alert-info    { background: #2196f3 !important; }
+.alert-warning { background: #ff9800 !important; }
+.alert-danger  { background: #e53935 !important; }
+
+
+
+/* ======================================================
+   12) GRID SYSTEM (future markdown layout support)
+====================================================== */
+
+.row {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 1rem !important;
+}
+
+.col {
+  flex: 1 1 0 !important;
+}
+
+.col-2 { flex: 0 0 50% !important; }
+.col-3 { flex: 0 0 33.333% !important; }
+.col-4 { flex: 0 0 25% !important; }
+
+
+
+/* ======================================================
+   13) IMAGE HELPERS
+====================================================== */
+
+.img-rounded {
+  border-radius: 12px !important;
+}
+
+.img-shadow {
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1) !important;
+}
+
+.img-center {
+  display: block !important;
+  margin: 1rem auto !important;
+}
+
+
+
+/* ======================================================
+   14) SPACING UTILITIES
+====================================================== */
+
+.mt-1 { margin-top: 0.5rem !important; }
+.mt-2 { margin-top: 1rem !important; }
+.mt-3 { margin-top: 1.5rem !important; }
+
+.mb-1 { margin-bottom: 0.5rem !important; }
+.mb-2 { margin-bottom: 1rem !important; }
+.mb-3 { margin-bottom: 1.5rem !important; }
+
+.pt-1 { padding-top: 0.5rem !important; }
+.pt-2 { padding-top: 1rem !important; }
+
+.pb-1 { padding-bottom: 0.5rem !important; }
+.pb-2 { padding-bottom: 1rem !important; }
+
+
+
+/* ======================================================
+   15) SHADOW UTILITIES
+====================================================== */
+
+.shadow-sm { box-shadow: 0 1px 3px rgba(0,0,0,0.1) !important; }
+.shadow-md { box-shadow: 0 3px 6px rgba(0,0,0,0.15) !important; }
+.shadow-lg { box-shadow: 0 8px 20px rgba(0,0,0,0.15) !important; }
