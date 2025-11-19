@@ -32,15 +32,12 @@
 /* ======================================================
    2) COMPACT SIDEBAR (Option B) — UPDATED (no border)
 ====================================================== */
-
-/* Narrower sidebar */
 .md-sidebar--primary {
-  width: 240px !important;   /* was 260px → now tighter */
+  width: 240px !important;
 }
 
-/* Section titles (Produits, Intégrations…) */
 .md-nav__title {
-  font-size: 0.70rem !important;         /* slightly smaller */
+  font-size: 0.70rem !important;
   padding: 0.25rem 1rem 0.15rem !important;
   text-transform: uppercase !important;
   letter-spacing: 0.03em !important;
@@ -48,36 +45,30 @@
   color: rgba(0,0,0,0.50) !important;
 }
 
-/* Sidebar links — tighter vertical spacing */
 .md-nav__link {
   font-size: 0.82rem !important;
-  padding: 0.22rem 1rem !important;      /* tighter */
+  padding: 0.22rem 1rem !important;
   line-height: 1.15 !important;
   border-radius: 4px !important;
 }
 
-/* Level-2 and deeper */
 .md-nav__item .md-nav__link[data-level="2"] {
-  padding-left: 1.25rem !important;      /* tighter indent */
+  padding-left: 1.25rem !important;
   font-size: 0.80rem !important;
   opacity: 0.92 !important;
 }
 
-/* Active item — green but NO thick border */
 .md-nav__link--active {
   font-weight: 600 !important;
   background: rgba(37,192,107,0.15) !important;
-  border-left: none !important;          /* removed border */
-  padding-left: 1rem !important;         /* reset left padding */
+  border-left: none !important;
+  padding-left: 1rem !important;
 }
-
 
 
 /* ======================================================
    3) FOOTER — FORCE FULL GREEN (Light + Dark)
 ====================================================== */
-
-/* Footer container (both modes) */
 .md-footer,
 .md-footer__inner,
 .md-footer-meta {
@@ -85,7 +76,6 @@
   color: #ffffff !important;
 }
 
-/* Footer links */
 .md-footer a,
 .md-footer__inner a,
 .md-footer-meta a {
@@ -99,7 +89,6 @@
   opacity: 1 !important;
 }
 
-/* Override dark mode palettes */
 [data-md-color-scheme="slate"] .md-footer,
 [data-md-color-scheme="slate"] .md-footer__inner,
 [data-md-color-scheme="slate"] .md-footer-meta {
@@ -111,13 +100,10 @@
 /* ======================================================
    4) PREVIOUS/NEXT — Compact + Inside Content Only
 ====================================================== */
-
-/* Remove big full-width green bar */
 .md-footer-nav {
   display: none !important;
 }
 
-/* Compact in-content pagination */
 .md-content__inner > nav.md-footer-nav--local {
   display: flex !important;
   justify-content: space-between !important;
@@ -137,20 +123,17 @@
   color: #333 !important;
 }
 
-/* Never extend to sidebar width */
 .md-footer-nav--local {
   width: 100% !important;
   margin-left: 0 !important;
   box-shadow: none !important;
 }
 
-/* Arrow size */
 .md-footer-nav--local svg {
   width: 16px !important;
   height: 16px !important;
 }
 
-/* Text links */
 .md-footer-nav--local a {
   color: #333 !important;
   font-size: 13px !important;
@@ -172,4 +155,45 @@
 ====================================================== */
 .md-main__inner {
   padding-top: 1rem !important;
+}
+
+
+/* ======================================================
+   7) HOME PAGE CARDS — FULL SUPPORT
+====================================================== */
+
+.card-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
+  gap: 1.4rem !important;
+  margin-top: 1.8rem !important;
+  margin-bottom: 2rem !important;
+  width: 100% !important;
+}
+
+.card {
+  padding: 1.6rem !important;
+  border-radius: 12px !important;
+  background: #ffffff !important;
+  border: 1px solid #e7e7e7 !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05) !important;
+  transition: 0.2s ease !important;
+}
+
+.card:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.10) !important;
+}
+
+.card h3 {
+  margin-top: 0 !important;
+  margin-bottom: 0.6rem !important;
+  font-size: 1.1rem !important;
+  color: #000 !important;
+}
+
+.card p {
+  font-size: 0.90rem !important;
+  margin: 0 !important;
+  color: #444 !important;
 }
