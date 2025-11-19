@@ -3,9 +3,6 @@ site_url: https://joeyjojo25.github.io/doc.can-nx/
 site_description: "Documentation complète pour l’écosystème KNX, IoT & IP Can’nX"
 site_author: "Can'nX"
 
-# ------------------------------
-# GitHub Pages build directory
-# ------------------------------
 site_dir: site
 
 theme:
