@@ -34,42 +34,44 @@
 
 
 /* ======================================================
-   2) COMPACT SIDEBAR
+   2) COMPACT SIDEBAR — EXTRA COMPACT VERSION
 ====================================================== */
 
 .md-sidebar--primary {
-  width: 240px !important;
+  width: 210px !important;
 }
 
+/* Section titles */
 .md-nav__title {
-  font-size: 0.70rem !important;
-  padding: 0.25rem 1rem 0.15rem !important;
+  font-size: 0.63rem !important;
+  padding: 0.15rem 0.8rem 0.1rem !important;
   text-transform: uppercase !important;
   letter-spacing: 0.03em !important;
   font-weight: 600 !important;
-  color: rgba(0,0,0,0.50) !important;
+  color: rgba(0,0,0,0.48) !important;
 }
 
+/* Main links */
 .md-nav__link {
-  font-size: 0.82rem !important;
-  padding: 0.22rem 1rem !important;
-  line-height: 1.15 !important;
-  border-radius: 4px !important;
+  font-size: 0.76rem !important;
+  padding: 0.18rem 0.8rem !important;
+  line-height: 1.05 !important;
+  border-radius: 3px !important;
 }
 
+/* Level-2 links */
 .md-nav__item .md-nav__link[data-level="2"] {
-  padding-left: 1.25rem !important;
-  font-size: 0.80rem !important;
-  opacity: 0.92 !important;
+  padding-left: 1rem !important;
+  font-size: 0.72rem !important;
+  opacity: 0.90 !important;
 }
 
+/* Active link styling */
 .md-nav__link--active {
   font-weight: 600 !important;
   background: rgba(37,192,107,0.15) !important;
-  border-left: none !important;
-  padding-left: 1rem !important;
+  padding-left: 0.8rem !important;
 }
-
 
 
 /* ======================================================
