@@ -1,129 +1,174 @@
 /*******************************************************
- * CAN'N'X — FINAL OVERRIDES FOR MATERIAL v9
- * Ensures: compact sidebar, fixed top menu, correct
- * prev/next positioning INSIDE content only.
+ *  CAN’N'X — FINAL UI OVERRIDES (OPTION B)
+ *  Compact Sidebar • Fixed Top Menu • Green Footer
+ *  MkDocs Material v9 — Fully Overriding Version
  *******************************************************/
-
 :root {}
 
-/* ------------------------------------------------------
-   TOP MENU — FIX SPACING, SIZE & ALIGNMENT
------------------------------------------------------- */
 
-/* Reduce top nav font + uniform spacing */
+/* ======================================================
+   1) TOP MENU — smaller, clean, aligned
+====================================================== */
 .md-header__inner nav .md-nav__item .md-nav__link {
   font-size: 0.82rem !important;
   padding: 0.55rem 0.9rem !important;
 }
 
-/* Active tab highlight */
 .md-nav__item--active > .md-nav__link {
   font-weight: 700 !important;
   color: #00994d !important;
   border-bottom: 2px solid #00994d !important;
 }
 
-/* Item hover */
 .md-nav__link:hover {
   color: #00994d !important;
 }
 
-/* Fix top nav vertical alignment */
 .md-header__inner {
   align-items: center !important;
 }
 
 
-/* ------------------------------------------------------
-   SIDEBAR — FULL COMPACT MODE
------------------------------------------------------- */
+/* ======================================================
+   2) COMPACT SIDEBAR (Option B)
+====================================================== */
 
-/* Make sidebar narrower */
+/* Narrower sidebar */
 .md-sidebar--primary {
   width: 260px !important;
 }
 
-/* Sidebar section titles */
+/* Section titles (Produits, Intégrations…) */
 .md-nav__title {
   font-size: 0.72rem !important;
+  padding: 0.4rem 1rem 0.25rem !important;
   text-transform: uppercase !important;
-  font-weight: 700 !important;
-  letter-spacing: 0.04em !important;
-  padding: 0.6rem 1rem 0.3rem !important;
+  letter-spacing: 0.03em !important;
+  font-weight: 600 !important;
   color: rgba(0,0,0,0.55) !important;
 }
 
 /* Sidebar links */
 .md-nav__link {
   font-size: 0.85rem !important;
-  padding: 0.35rem 1rem !important;
+  padding: 0.28rem 1rem !important;
+  line-height: 1.2 !important;
   border-radius: 6px !important;
 }
 
-/* Level 2 links */
+/* Level-2 and deeper */
 .md-nav__item .md-nav__link[data-level="2"] {
-  padding-left: 1.4rem !important;
+  padding-left: 1.35rem !important;
   font-size: 0.82rem !important;
-  opacity: 0.9 !important;
+  opacity: 0.92 !important;
 }
 
-/* Active item styling */
+/* Active */
 .md-nav__link--active {
+  font-weight: 600 !important;
   background: rgba(37,192,107,0.15) !important;
   border-left: 3px solid #25c06b !important;
   padding-left: calc(1rem - 3px) !important;
-  font-weight: 600 !important;
 }
 
 
-/* ------------------------------------------------------
-   BOTTOM PREVIOUS/NEXT INSIDE CONTENT ONLY
------------------------------------------------------- */
+/* ======================================================
+   3) FOOTER — FORCE FULL GREEN (Light + Dark)
+====================================================== */
 
-/* REMOVE the big green full-width bar */
+/* Footer container (both modes) */
+.md-footer,
+.md-footer__inner,
+.md-footer-meta {
+  background-color: #00994d !important;
+  color: #ffffff !important;
+}
+
+/* Footer links */
+.md-footer a,
+.md-footer__inner a,
+.md-footer-meta a {
+  color: #ffffff !important;
+  opacity: 0.9 !important;
+}
+
+.md-footer a:hover,
+.md-footer__inner a:hover,
+.md-footer-meta a:hover {
+  opacity: 1 !important;
+}
+
+/* Override dark mode palettes */
+[data-md-color-scheme="slate"] .md-footer,
+[data-md-color-scheme="slate"] .md-footer__inner,
+[data-md-color-scheme="slate"] .md-footer-meta {
+  background-color: #00994d !important;
+  color: #ffffff !important;
+}
+
+
+/* ======================================================
+   4) PREVIOUS/NEXT — Compact + Inside Content Only
+====================================================== */
+
+/* Remove big full-width green bar */
 .md-footer-nav {
   display: none !important;
 }
 
-/* Force compact nav inside content */
+/* Compact in-content pagination */
 .md-content__inner > nav.md-footer-nav--local {
   display: flex !important;
   justify-content: space-between !important;
   align-items: center !important;
-  margin-top: 2rem !important;
-  padding: 0.6rem 1rem !important;
 
-  background: #f6f6f6 !important;
+  margin-top: 2rem !important;
+  padding: 0.75rem 1rem !important;
+
+  background: #f5f5f5 !important;
   border-radius: 10px !important;
-  border: 1px solid #e5e5e5 !important;
+  border: 1px solid #e0e0e0 !important;
+
+  max-width: 980px !important;
+  width: 100% !important;
 
   font-size: 13px !important;
-  max-width: 980px !important;
+  color: #333 !important;
 }
 
-/* Ensure it never expands to sidebar width */
+/* Never extend to sidebar width */
 .md-footer-nav--local {
   width: 100% !important;
+  margin-left: 0 !important;
   box-shadow: none !important;
 }
 
-/* Smaller arrows */
+/* Arrow size */
 .md-footer-nav--local svg {
   width: 16px !important;
   height: 16px !important;
 }
 
-/* Link text */
+/* Text links */
 .md-footer-nav--local a {
   color: #333 !important;
   font-size: 13px !important;
+  font-weight: 500 !important;
+  text-decoration: none !important;
 }
 
 
-/* ------------------------------------------------------
-   OPTIONAL — PAGE WIDTH CONSISTENCY
------------------------------------------------------- */
-
+/* ======================================================
+   5) CONTENT WIDTH (stable layout)
+====================================================== */
 .md-content {
   max-width: 980px !important;
+}
+
+
+/* ======================================================
+   6) OPTIONAL: improve spacing on page top
+====================================================== */
+.md-main__inner {
+  padding-top: 1rem !important;
 }
