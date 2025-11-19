@@ -16,29 +16,31 @@ Kloud’nX, Infini KNX, Boss’nX, Chart’nX, Emergy’nX, Speak’nX, Pool’n
 
 ## Guides rapides
 
+<!-- prettier-ignore-start -->
 <div class="card-grid">
 
-<div class="card">
-<h3>Guide de démarrage</h3>
-<p>Installation, prérequis, première connexion.</p>
-</div>
+  <div class="card">
+    <h3>Guide de démarrage</h3>
+    <p>Installation, prérequis, première connexion.</p>
+  </div>
 
-<div class="card">
-<h3>Produits Can’nX</h3>
-<p>Documentation complète pour chaque module.</p>
-</div>
+  <div class="card">
+    <h3>Produits Can’nX</h3>
+    <p>Documentation complète pour chaque module.</p>
+  </div>
 
-<div class="card">
-<h3>Intégrations</h3>
-<p>KNX, Modbus, MQTT, Wi-Fi, API REST, vidéo…</p>
-</div>
+  <div class="card">
+    <h3>Intégrations</h3>
+    <p>KNX, Modbus, MQTT, Wi-Fi, API REST, vidéo…</p>
+  </div>
 
-<div class="card">
-<h3>Support</h3>
-<p>Dépannage, scénarios, communication bus, logs.</p>
-</div>
+  <div class="card">
+    <h3>Support</h3>
+    <p>Dépannage, scénarios, communication bus, logs.</p>
+  </div>
 
 </div>
+<!-- prettier-ignore-end -->
 
 ---
 
