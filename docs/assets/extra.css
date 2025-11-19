@@ -1,45 +1,39 @@
 /*******************************************************
- *  CAN’N'X — FULL UI OVERRIDE MERGED (FINAL)
- *  Stable for: MkDocs Material v9
- *  Includes:
- *   ✓ Smaller menu font
- *   ✓ Stronger active tab highlight
- *   ✓ Green footer
- *   ✓ Previous/Next only inside content (compact)
- *   ✓ All your original custom UI styling
+ *  CAN’N'X — ENFORCED OVERRIDES FOR MATERIAL v9
+ *  Guaranteed to override all theme styles
  *******************************************************/
+
+/* Force precedence wrapper */
+:root {}
 
 
 /* ------------------------------------------------------
    GLOBAL TYPOGRAPHY
 ------------------------------------------------------ */
 .md-content {
-  max-width: 980px;
+  max-width: 980px !important;
 }
 
 .md-typeset {
-  font-size: 1rem;
-  line-height: 1.65;
+  font-size: 1rem !important;
+  line-height: 1.65 !important;
 }
 
-.md-typeset h1 { font-size: 2.2rem; margin-top: 2rem; }
-.md-typeset h2 { font-size: 1.6rem; margin-top: 1.8rem; }
-.md-typeset h3 { font-size: 1.3rem; margin-top: 1.4rem; }
+.md-typeset h1 { font-size: 2.2rem !important; margin-top: 2rem !important; }
+.md-typeset h2 { font-size: 1.6rem !important; margin-top: 1.8rem !important; }
+.md-typeset h3 { font-size: 1.3rem !important; margin-top: 1.4rem !important; }
 
 
 /* ------------------------------------------------------
-   TOP NAVIGATION — SMALLER FONT + STRONGER ACTIVE TAB
+   NAVIGATION — SMALLER FONT + STRONGER ACTIVE LINK
 ------------------------------------------------------ */
-
-/* Smaller menu font */
 .md-nav__link,
 .md-nav__title {
   font-size: 0.80rem !important;
 }
 
-/* Stronger active top-level tabs */
 .md-nav--primary .md-nav__item--active > .md-nav__link {
-  font-weight: 600 !important;
+  font-weight: 700 !important;
   color: #00994d !important;
   border-bottom: 2px solid #00994d !important;
 }
@@ -48,7 +42,10 @@
   color: #00994d !important;
 }
 
-/* Existing your tab styling */
+
+/* ------------------------------------------------------
+   TABS
+------------------------------------------------------ */
 .md-tabs__item {
   font-size: 1rem !important;
   padding: 0.6rem 1.1rem !important;
@@ -61,43 +58,40 @@
 
 
 /* ------------------------------------------------------
-   SIDEBAR WIDTH + COMPACT STYLE
+   SIDEBAR
 ------------------------------------------------------ */
 .md-sidebar--primary {
   width: 300px !important;
 }
 
 .md-nav__title {
-  font-size: 0.80rem !important;
-  text-transform: uppercase;
+  text-transform: uppercase !important;
   font-weight: 700 !important;
-  color: rgba(0,0,0,0.45);
-  letter-spacing: 0.03em;
-  padding: 0.8rem 1rem 0.2rem;
+  color: rgba(0,0,0,0.45) !important;
+  letter-spacing: 0.03em !important;
 }
 
 .md-nav__link {
   font-size: 0.92rem !important;
   padding: 0.45rem 1rem !important;
-  border-radius: 6px;
+  border-radius: 6px !important;
 }
 
 .md-nav__item .md-nav__link[data-level="2"] {
   padding-left: 1.6rem !important;
   font-size: 0.88rem !important;
-  opacity: 0.9;
+  opacity: 0.9 !important;
 }
 
 .md-nav__link--active {
   font-weight: 600 !important;
   background: rgba(37,192,107,0.12) !important;
   border-left: 3px solid #25c06b !important;
-  padding-left: calc(1rem - 3px) !important;
 }
 
 
 /* ------------------------------------------------------
-   FOOTER — MAKE FULL FOOTER GREEN
+   FOOTER — GREEN
 ------------------------------------------------------ */
 .md-footer {
   background-color: #00994d !important;
@@ -106,78 +100,57 @@
 
 .md-footer a {
   color: #ffffff !important;
-  opacity: 0.85;
+  opacity: 0.85 !important;
 }
 
 .md-footer a:hover {
-  opacity: 1;
+  opacity: 1 !important;
 }
 
 
 /* ------------------------------------------------------
-   PREVIOUS/NEXT NAVIGATION — LOCAL ONLY
+   PREVIOUS/NEXT — LOCAL ONLY
 ------------------------------------------------------ */
-
-/* Hide default full-width nav bar */
 .md-footer-nav {
   display: none !important;
 }
 
-/* Local compact version inside content */
 .md-content__inner + nav.md-footer-nav--local {
   display: flex !important;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 2rem;
-  padding: 0.6rem 1rem;
-  border-radius: 8px;
-  background: #f4f4f4;
+  justify-content: space-between !important;
+  padding: 0.6rem 1rem !important;
   font-size: 12px !important;
-  color: #444;
-  width: 100%;
-  max-width: 980px;
+  background: #f4f4f4 !important;
+  border-radius: 8px !important;
+  border: 1px solid #eee !important;
 }
 
-.md-footer-nav--local {
-  box-shadow: none !important;
-  border: 1px solid #eee;
-}
-
-/* Compact arrow icons */
 .md-footer-nav--local svg {
   width: 14px !important;
   height: 14px !important;
 }
 
-/* Compact text */
-.md-footer-nav--local a {
-  font-size: 12px !important;
-  color: #333 !important;
-}
-
 
 /* ------------------------------------------------------
-   HOMEPAGE CARDS
+   CARDS
 ------------------------------------------------------ */
 .card-grid {
-  display: grid;
-  gap: 1.4rem;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  margin: 2rem 0;
+  display: grid !important;
+  gap: 1.4rem !important;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)) !important;
 }
 
 .card {
-  padding: 1.6rem;
-  border-radius: 12px;
-  background: #fff;
-  border: 1px solid #eee;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
-  transition: 0.15s ease;
+  padding: 1.6rem !important;
+  border-radius: 12px !important;
+  border: 1px solid #eee !important;
+  background: #fff !important;
+  transition: 0.15s ease !important;
 }
 
 .card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transform: translateY(-3px) !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08) !important;
 }
 
 
@@ -185,12 +158,10 @@
    HERO SECTION
 ------------------------------------------------------ */
 .hero {
-  padding: 4rem 2rem;
-  text-align: center;
-  border-radius: 14px;
-  background: linear-gradient(135deg, #e8fbea, #ffffff 65%);
-  margin-bottom: 2.5rem;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  padding: 4rem 2rem !important;
+  text-align: center !important;
+  border-radius: 14px !important;
+  background: linear-gradient(135deg, #e8fbea, #ffffff 65%) !important;
 }
 
 
@@ -198,10 +169,10 @@
    BLOCKQUOTES
 ------------------------------------------------------ */
 .md-typeset blockquote {
-  border-left: 5px solid #25c06b;
-  background: #f3fff7;
-  padding: 0.8rem 1.2rem;
-  border-radius: 6px;
+  border-left: 5px solid #25c06b !important;
+  background: #f3fff7 !important;
+  padding: 0.8rem 1.2rem !important;
+  border-radius: 6px !important;
 }
 
 
@@ -209,10 +180,10 @@
    CODE BLOCKS
 ------------------------------------------------------ */
 .md-typeset pre {
-  border-radius: 10px;
-  background: #f8f9fa;
-  padding: 1rem;
-  box-shadow: inset 0 0 0 1px #e6e8eb;
+  border-radius: 10px !important;
+  background: #f8f9fa !important;
+  padding: 1rem !important;
+  box-shadow: inset 0 0 0 1px #e6e8eb !important;
 }
 
 
@@ -220,7 +191,7 @@
    TABLES
 ------------------------------------------------------ */
 .md-typeset table:not([class]) {
-  border: 1px solid #e0e0e0;
-  border-radius: 10px;
-  overflow: hidden;
+  border: 1px solid #e0e0e0 !important;
+  border-radius: 10px !important;
+  overflow: hidden !important;
 }
